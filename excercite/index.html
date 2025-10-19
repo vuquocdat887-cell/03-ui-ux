@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+    <div class="card">
+        <header>
+            <div>
+                <strong>Ứng dụng Quản lý</strong>
+            </div>
+            <div>
+                <button id="btnLogout" class="hidden">Đăng xuất</button>
+            </div>
+        </header>
+
+        <div id="loginArea" class="section">
+            <div class="row" style="justify-content:center;max-width:420px;margin:12px auto 0">
+                <input id="inpEmail" type="email" placeholder="Email">
+                <input id="inpPass" type="password" placeholder="Mật khẩu">
+                <button id="btnLogin">Đăng nhập</button>
+            </div>
+        </div>
+
+        <div id="app" class="hidden">
+            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
+                <button id="tabUsers">Quản lý Người dùng</button>
+                <button id="tabCart" ><i class="fa-solid fa-cart-shopping"></i></button>
+                <button id="tabProducts">Quản lý Sản phẩm</button>
+                <button id="tabHome">Trang Chủ</button>
+            </div>
+
+            <div id="secUsers" class="hidden">
+                <div class="row">
+                    <input id="u_name" placeholder="Họ tên">
+                    <input id="u_email" placeholder="Email">
+                    <select id="u_role">
+                        <option value="user">user</option>
+                    </select>
+                    <button id="u_save">Lưu</button>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Họ tên</th>
+                            <th>Email</th>
+                            <th>Vai trò</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbUsers"></tbody>
+                </table>
+            </div>
+
+            <div id="secProducts" class="hidden">
+                <div class="row">
+                    <input id="p_name" placeholder="Tên sản phẩm">
+                    <input id="p_price" placeholder="Giá">
+                    <input id="p_img" placeholder="Link ảnh (URL)">
+                    <button id="p_save">Lưu</button>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tên</th>
+                            <th>Giá</th>
+                            <th>Ảnh</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbProducts"></tbody>
+                </table>
+            </div>
+
+            <div id="secHome" class="hidden">
+                <h3>Danh sách sản phẩm</h3>
+                <div id="cards" class="cards"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="secCart" class="hidden">
+        <h3>Giỏ hàng của bạn</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>sp</th>
+                    <th>Giá</th>
+                    <th>Số lượng</th>
+                </tr>
+            </thead>
+            <tbody id="tbCart"></tbody>
+        </table>
+        <div style="margin-top:10px;font-weight:bold">
+            Tổng tiền: $<span id="totalPrice">0</span> 
+        </div>
+        <button id="btnCheckout" style="margin-top:8px;">Thanh toán</button>
+    </div>
+
+
+    <script src="script.js" defer></script>
+</body>
+
+</html>
